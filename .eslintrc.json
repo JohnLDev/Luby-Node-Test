@@ -1,0 +1,25 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "standard"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 12
+    },
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "space-before-function-paren": "off",
+        "comma-dangle": "off",
+        "prettier/prettier":"error",
+        "camelcase": "off",
+        "no-useless-constructor": "off",
+        "@javascript-eslint/camelcase":"off"
+        }
+    }
