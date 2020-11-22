@@ -7,13 +7,6 @@
 
 
 
-<p align="center">
- <a href="#-sobre">Sobre</a> •
- <a href="#-layout">Layout</a> •
- <a href="#-executando-o-happy">Como executar</a> •
- <a href="#-tecnologias">Tecnologias</a> •
- <a href="#-autora">Autora</a>
-</p>
 
 ---
 
