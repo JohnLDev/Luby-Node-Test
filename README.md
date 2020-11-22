@@ -510,17 +510,7 @@ response:
 
     ```
     - O retorno será o id do container criado e isso indica que tudo está funcionando
-    - Agora será preciso acessar o banco de dados através de um software adequado (Beekeeper studio,DBeaver) e criar um banco de dados que sera usado no .env
 
-- Para rodar a aplicação mobile será necessário um emulador de android ou dispositivo físico
-    - Emulador digitar o comando abaixo
-    ```bash
-
-    $ adb reverse tcp:3333 tcp:3333
-
-    ```
-     - Para utilizar dispositivo físico será necessário alterar a base urç da api em /mobile/src/service/api.ts para o ip de sua maquina na rede
-          - esse ip pode ser pego na aba connection do expo
 
 ### ♊ Clonando o Repositório
 
