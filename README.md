@@ -591,7 +591,7 @@ As ferramentas usadas no desenvolvimento do projeto.
 - Sequelize
 - Yup
 - JsonWebToken
-- Bcriptjs
+- Nodemon
 
 
 ---
