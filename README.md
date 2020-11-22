@@ -84,7 +84,7 @@ response:
 ### Rota Login
 __Método:POST__
 
-URL:`http://localhost:3333/user/create`
+URL:`http://localhost:3333/user/login`
 * Rota recebe através do body da request o username de um usuário e retorna o usuario e um token de acesso.
 
 ```
