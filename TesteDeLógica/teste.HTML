@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>teste de lógica</title>
+</head>
+<body>
+
+  <h1>Teste de lógica LubySoftware</h1>
+  <ul>
+    <li>Teste de lógica 1   <button onclick={test1()}  >Começar</button></li>
+    <li>Teste de lógica 2   <button onclick={test2()}  >Começar</button></li>
+    <li>Teste de lógica 3   <button onclick={test3()}  >Começar</button></li>
+    <li>Teste de lógica 4   <button onclick={test4()}  >Começar</button></li>
+    <li>Teste de lógica 5   <button onclick={test5()}  >Começar</button></li>
+    <li>Teste de lógica 6   <button onclick={test6()}  >Começar</button></li>
+    <li>Teste de lógica 7   <button onclick={test7()}  >Começar</button></li>
+    <li>Teste de lógica 8   <button onclick={test8()}  >Começar</button></li>
+    <li>Teste de lógica 9   <button onclick={test9()}  >Começar</button></li>
+    <li>Teste de lógica 10  <button onclick={test10()}  >Começar</button></li>
+  </ul>
+
+  <script>
+    function test1(){
+      const result = []
+      var entrada = prompt('Digite o numero de itens que deseja no array')
+
+      while (isNaN(entrada)) {
+         entrada = prompt('Digite o numero de itens que deseja no array')
+      }
+      var content = prompt('digite o conteudo que ira se repetir no array')
+      for (let index = 0; index < entrada; index++) {
+        result[index] = content
+      }
+      alert(result)
+
+    }
+
+    function test2(){
+      let result = []
+      let content = []
+      var entrada = prompt('Digite o numero de itens que deseja no array')
+
+      while (isNaN(entrada)) {
+         entrada = prompt('Digite o numero de itens que deseja no array')
+      }
+      let count = entrada - 1
+      for (let index = 0; index < entrada; index++) {
+
+         content[index] = prompt(`digite o conteudo que ira ocupar a posição ${index} do array`)
+         result[count]  = content[index]
+         count= count - 1
+      }
+      alert(result)
+    }
+
+    function test3(){
+
+      let contents = []
+      var entrada = prompt('Digite o numero de itens que deseja no array')
+
+      while (isNaN(entrada)) {
+         entrada = prompt('Digite o numero de itens que deseja no array')
+      }
+      for (let index = 0; index < entrada; index++) {
+
+         contents[index] = prompt(`digite o conteudo que ira ocupar a posição ${index} do array(false e undefined serão convertidos)`)
+
+      }
+
+      contents.forEach((content,index) => {
+        if(!content | content === 'false' | content === 'undefined'){
+          contents= contents.filter(item => item !== content)
+        }
+      })
+      alert(contents)
+    }
+
+function test4(){
+  let contents = []
+  var entrada = prompt('Digite o numero de arrays que deseja no array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de arrays que deseja no array')
+}
+  for (let index = 0; index < entrada; index++) {
+    let array = []
+   array[0] = prompt(`digite a chave`)
+   array[1] = prompt(`digite o valor da chave`)
+
+   contents = [...contents, array]
+}
+
+const entries = new Map(contents)
+const object = Object.fromEntries(entries)
+
+alert(object)
+}
+
+function test5(){
+  let contents = []
+  let filter = []
+  var entrada = prompt('Digite o numero de itens que deseja no array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    contents[index] = prompt(`digite o valor da posição ${index}`)
+}
+
+
+  entrada = prompt('Digite quantos itens deseja filtrar')
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+  }
+
+  for (let index = 0; index < entrada; index++) {
+    filter[index] = prompt(`digite o valor o ${index} que deseja filtrar`)
+  }
+
+  for (let index = 0; index < entrada; index++) {
+    filter.forEach(filter => {
+      if(filter === contents[index]){
+       contents.splice(index, 1)
+      }
+   })
+  }
+  alert(contents)
+}
+
+function test6(){
+  let contents = []
+  let entrada = prompt('Digite o numero de itens que deseja no array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    contents[index] = prompt(`digite o valor da posição ${index}`)
+}
+
+contents = contents.filter(function(elem, pos, self) {
+    return self.indexOf(elem) == pos;
+})
+  alert(contents)
+}
+
+function test8(){
+  let contents = []
+  let entrada2 = 0
+  let entrada = prompt('Digite o numero de itens que deseja no array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    if(window.confirm(`o valoda da posição ${index} é um array?`)){
+      let array = []
+      entrada2 = prompt('Digite o numero de itens que deseja no array')
+
+     while (isNaN(entrada)) {
+       entrada2 = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+       }
+       for (let index = 0; index < entrada2; index++) {
+        array[index] = prompt(`digite o valor da posição ${index}`)
+       }
+       contents = [...contents, array]
+     }else{
+      contents[index] = prompt(`digite o valor da posição ${index}`)
+     }
+
+}
+console.log('array antes de desaninhar' , contents)
+
+  contents = contents.flat()
+
+
+  console.log('array depois de desaninhar' , contents)
+  alert('verificar o console para a resposta', contents)
+}
+
+function test9(){
+  let contents = []
+  let resultado = [[]];
+  let grupo = 0;
+  let entrada = prompt('Digite o numero de itens que deseja no array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    contents[index] = prompt(`digite o valor da posição ${index}`)
+}
+ let div = prompt('Digite o numero de itens que deseja em cada array')
+
+while (isNaN(div)) {
+  div = prompt('Digite o numero de itens que deseja em cada array')
+}
+
+
+  console.log('array inicial:', contents)
+
+  for (let indice = 0; indice < contents.length; indice++) {
+    if (resultado[grupo] === undefined) {
+      resultado[grupo] = [];
+    }
+
+    resultado[grupo].push(contents[indice]);
+
+    if ((indice + 1) % div === 0) {
+      grupo = grupo + 1;
+    }
+  }
+
+  console.log('array divido:', resultado)
+  alert("verificar console para resposta")
+}
+
+function test7(){
+  let array1 = []
+  let array2 = []
+  let key = 0
+  let entrada = prompt('Digite o numero de itens que deseja no primeiro array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    array1[index] = prompt(`digite o valor da posição ${index}`)
+}
+
+  entrada = prompt('Digite o numero de itens que deseja no segundo array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    array2[index] = prompt(`digite o valor da posição ${index}`)
+}
+
+if( array1.length === array2.length ){
+  array1.forEach((item, index)=>{
+    if(array1[index ] !== array2[index]){
+      alert(false)
+      key = 1
+      return
+    }
+  })
+  key === 0 ? alert(true): null
+} else {
+  alert(false)
+  }
+}
+
+function test10(){
+  let array1 = []
+  let array2 = []
+  let result = []
+
+  let entrada = prompt('Digite o numero de itens que deseja no primeiro array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no primeiro array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    array1[index] = prompt(`digite o valor da posição ${index}`)
+}
+
+ entrada = prompt('Digite o numero de itens que deseja no segundo array')
+
+  while (isNaN(entrada)) {
+    entrada = prompt('Digite o numero de itens que deseja no segundo array(precisa ser um numero)')
+}
+  for (let index = 0; index < entrada; index++) {
+    array2[index] = prompt(`digite o valor da posição ${index}`)
+}
+
+for (let index = 0; index < array1.length; index++) {
+  array2.forEach(item => {
+    if(item === array1[index]){
+      result.push(item)
+    }
+  })
+
+}
+  console.log('array1:', array1)
+  console.log('array2:', array2)
+  console.log('result:', result)
+  alert(result)
+}
+
+  </script>
+</body>
+</html>
